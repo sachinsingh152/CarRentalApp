@@ -1,0 +1,40 @@
+/* css    */
+.top-form{
+    -fx-background-color:#fff;
+    -fx-border-color:#000;
+    -fx-border-width:.4px .4px .2px .4px;
+}
+
+.semi-top-form{
+    -fx-background-color:#efefef;
+    -fx-border-color:#000;
+    -fx-border-width:.2px .4px .4px .4px;
+}
+
+.close{
+    -fx-background-color:transparent;
+    -fx-cursor:hand;
+}
+
+.nav-form{
+    -fx-background-color:#F0F8FF;
+	-fx-background-radius:4px;
+}
+
+.white{
+	-fx-background-color:#ffffff
+}
+
+.white-bg {
+	-fx-background-color:#fff;
+	-fx-background-radius:8px;
+}
+
+.shadow{
+	-fx-effect:dropshadow(three-pass-box , rgba(0,0,0,0.5),6,0,0,0)
+}
+
+.image-css
+{
+    -fx-background-color: linear-gradient(#ffffff , #a9e2ff);
+}
