@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS car (
 
 -- Create customer table
 CREATE TABLE IF NOT EXISTS customer (
+    id INT AUTO_INCREMENT PRIMARY KEY,
     car_id VARCHAR(50),
     firstname VARCHAR(100) NOT NULL,
     lastname VARCHAR(100) NOT NULL,
