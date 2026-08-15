@@ -3,8 +3,8 @@ package application.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import java.util.List;
+import java.util.ArrayList;
 import application.config.DatabaseConfig;
 import application.model.Customerdata;
 
@@ -29,8 +29,8 @@ public class CustomerDAO {
         }
     }
 
-    public ObservableList<Customerdata> getAllCustomers() {
-        ObservableList<Customerdata> list = FXCollections.observableArrayList();
+    public List<Customerdata> getAllCustomers() {
+        List<Customerdata> list = new ArrayList<>();
         String query = "SELECT * FROM customer";
         try (Connection con = DatabaseConfig.connectDb();
              PreparedStatement pr = con != null ? con.prepareStatement(query) : null;

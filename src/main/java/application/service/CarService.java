@@ -2,12 +2,12 @@ package application.service;
 
 import application.dao.CarDAO;
 import application.model.Carcomponent;
-import javafx.collections.ObservableList;
+import java.util.List;
 
 public class CarService {
     private CarDAO carDAO = new CarDAO();
     
-    public ObservableList<Carcomponent> getAllCars() {
+    public List<Carcomponent> getAllCars() {
         return carDAO.getAllCars();
     }
     

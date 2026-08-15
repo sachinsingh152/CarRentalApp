@@ -3,15 +3,15 @@ package application.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import java.util.List;
+import java.util.ArrayList;
 import application.config.DatabaseConfig;
 import application.model.Carcomponent;
 
 public class CarDAO {
 
-    public ObservableList<Carcomponent> getAllCars() {
-        ObservableList<Carcomponent> list = FXCollections.observableArrayList();
+    public List<Carcomponent> getAllCars() {
+        List<Carcomponent> list = new ArrayList<>();
         String query = "SELECT * FROM car";
         try (Connection con = DatabaseConfig.connectDb();
              PreparedStatement pr = con != null ? con.prepareStatement(query) : null;

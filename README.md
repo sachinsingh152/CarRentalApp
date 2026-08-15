@@ -1,6 +1,6 @@
 # 🚗 Car Rental Management System
 
-Car Rental Management System built with JavaFX and MySQL. The application handles customers, cars, rentals, and returns through a dual-mode interface (desktop and web).
+Car Rental Management System built with Spring Boot and MySQL. The application handles customers, cars, rentals, and returns through a modern web interface.
 
 ## Live Demo
 
@@ -17,7 +17,6 @@ Car Rental Management System built with JavaFX and MySQL. The application handle
 
 ## Features
 
-- Dual modes: Run as a standalone Desktop App or a cloud Web App.
 - Secure login for administrators.
 - Dashboard with real-time metrics (customers, income, available cars).
 - Add, update, delete, and view cars.
@@ -27,9 +26,6 @@ Car Rental Management System built with JavaFX and MySQL. The application handle
 ## Tech Stack
 
 - Java 17
-- JavaFX
-- FXML
-- CSS
 - MySQL
 - JDBC
 - Maven
@@ -45,7 +41,6 @@ Car Rental Management System built with JavaFX and MySQL. The application handle
 ├── src/
 │   ├── main/java/application/
 │   │   ├── config/       (Database config)
-│   │   ├── controller/   (JavaFX controllers)
 │   │   ├── dao/          (Database queries)
 │   │   ├── model/        (Data structures)
 │   │   ├── service/      (Business logic)
@@ -53,8 +48,6 @@ Car Rental Management System built with JavaFX and MySQL. The application handle
 │   │   └── CarRentalWebApplication.java
 │   └── main/resources/
 │       ├── application.properties
-│       ├── MainMenu.css
-│       ├── FxmalDocumant.fxml
 │       └── static/       (HTML, JS, CSS for web)
 └── screenshots/
 ```
@@ -69,16 +62,6 @@ The MySQL database `rentcar` uses three tables:
 ## Running Locally
 
 First, execute `src/main/resources/database/schema.sql` on your MySQL server and configure your `.env` file based on `.env.example`.
-
-### JavaFX Desktop App
-
-Run the desktop client locally:
-
-```bash
-mvn javafx:run
-```
-
-### Web Version
 
 Run the Spring Boot web server on port 8080:
 
@@ -99,9 +82,7 @@ docker run --rm -p 8080:8080 -e PORT=8080 --network host -e DB_URL=jdbc:mysql://
 
 ## Architecture
 
-The system shares backend logic across both interfaces:
-
-**Controller (JavaFX / Spring REST)** → **Service** → **DAO** → **MySQL Database**
+**Controller (Spring REST)** → **Service** → **DAO** → **MySQL Database**
 
 ## Authentication
 

@@ -3,7 +3,7 @@ package application.service;
 import application.dao.CarDAO;
 import application.dao.CustomerDAO;
 import application.model.Customerdata;
-import javafx.collections.ObservableList;
+import java.util.List;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
@@ -11,7 +11,7 @@ public class RentalService {
     private CarDAO carDAO = new CarDAO();
     private CustomerDAO customerDAO = new CustomerDAO();
     
-    public ObservableList<Customerdata> getAllRentals() {
+    public List<Customerdata> getAllRentals() {
         return customerDAO.getAllCustomers();
     }
     
