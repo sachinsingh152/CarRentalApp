@@ -11,7 +11,7 @@ FROM eclipse-temurin:17-jre-jammy
 WORKDIR /app
 COPY --from=builder /app/target/car-rental-app-1.0-SNAPSHOT.jar app.jar
 
-# Render assigns a dynamic port, so we expose the default but it will be overridden by the ENV PORT
+# Render uses the PORT environment variable
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["sh", "-c", "java -jar app.jar --server.port=${PORT:-8080}"]
