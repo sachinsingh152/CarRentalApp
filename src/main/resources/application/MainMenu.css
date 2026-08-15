@@ -1,0 +1,111 @@
+/* Modernized MainMenu CSS */
+
+.top-form {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e5e7eb;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.semi-top-form {
+    -fx-background-color: #f3f4f6;
+}
+
+.close {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.nav-form {
+    -fx-background-color: #1f2937;
+    -fx-background-radius: 8px;
+    -fx-padding: 10px;
+}
+
+.nav-form .label {
+    -fx-text-fill: #f9fafb;
+}
+
+.nav-form .button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #d1d5db;
+    -fx-alignment: center-left;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+    -fx-background-radius: 6px;
+}
+
+.nav-form .button:hover {
+    -fx-background-color: #374151;
+    -fx-text-fill: #ffffff;
+}
+
+.white {
+    -fx-background-color: #ffffff;
+}
+
+.white-bg {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 8px;
+}
+
+.shadow {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 10, 0, 0, 4);
+}
+
+.image-css {
+    -fx-background-color: #ffffff;
+}
+
+/* Form inputs styling */
+.text-field, .combo-box, .date-picker {
+    -fx-background-color: #f9fafb;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 6px;
+}
+
+.text-field:focused, .combo-box:focused, .date-picker:focused {
+    -fx-border-color: #3b82f6;
+    -fx-background-color: #ffffff;
+}
+
+/* Tables */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 8px;
+}
+
+.table-view .column-header {
+    -fx-background-color: #f3f4f6;
+    -fx-text-fill: #374151;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell {
+    -fx-background-color: #ffffff;
+    -fx-border-color: transparent transparent #f3f4f6 transparent;
+    -fx-padding: 8px;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #eff6ff;
+}
+
+/* Action Buttons */
+.button {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-padding: 8px 16px;
+}
+
+.button:hover {
+    -fx-background-color: #1d4ed8;
+}

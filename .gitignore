@@ -1,1 +1,10 @@
 /bin/
+
+.env
+*.class
+target/
+.idea/
+.vscode/
+logs/
+screenshots/
+.DS_Store

@@ -1,104 +1,121 @@
-🚗 Car Rental Management System
+# Car Rental Management System
 
-A JavaFX-based desktop application designed to manage car rentals, customer data, and bookings.
-This project demonstrates Java, JavaFX, MySQL, and CSS integration for creating a modern and responsive UI.
+A dual-mode Car Rental Management System with a modern web dashboard and a classic JavaFX desktop client. Both modes share the same robust backend services, data access layer, and BCrypt security. 
 
-📌 Features
+## 🌐 Live Demo
 
-✅ Add, update, and delete customer records
-✅ Manage available cars with images
-✅ Book and return cars easily
-✅ Integrated database using MySQL
-✅ Responsive UI built with JavaFX + FXML + CSS
-✅ User authentication with secure login system
+**Coming soon — Live deployment on Render**
 
-🛠️ Technologies Used
-Technology	Purpose
-Java	Core programming language
-JavaFX	Building the GUI
-FXML	Designing UI layouts
-CSS	Styling the JavaFX components
-MySQL	Database for storing customer & car data
-JDBC	Connecting Java to MySQL
+`https://YOUR-RENDER-URL.onrender.com/`
 
+## Features
+- **Dual-Mode Architecture:** Run as a standalone Desktop App (JavaFX) or a cloud-hosted Web App (Spring Boot + HTML/JS).
+- **Secure Administrator Login:** BCrypt password hashing for secure authentication across both modes.
+- **Interactive Dashboards:** Real-time metrics on total customers, income, and available cars.
+- **Car Fleet Management:** Complete CRUD operations for the vehicle inventory via REST API or Desktop.
+- **Rental Processing:** Automated total price calculation based on dynamic rental duration algorithms.
+- **Return Management:** Streamlined processing to check cars back in and update availability.
 
-📂 Project Structure
-CarRentalApp/
-│── src/
-│   ├── application/
-│   │   ├── Main.java
-│   │   ├── Database.java
-│   │   ├── Customerdata.java
-│   │   ├── Carcomponent.java
-│   │   ├── mainMenu.fxml
-│   │   ├── loginDesign.css
-│   │   └── ...
-│── bin/
-│── images/
-│── .gitignore
-│── README.md
+## Tech Stack
+- **Languages:** Java 17 LTS, HTML, CSS, JavaScript
+- **Backend:** Spring Boot (REST APIs)
+- **Frontend/Desktop:** JavaFX 17 (FXML) & Vanilla Web UI
+- **Database:** MySQL 8.x (Compatible with Aiven/Render DB)
+- **Build Tool & Deployment:** Maven, Docker
 
-⚡ Getting Started
-1. Clone the Repository
-git clone https://github.com/sachinsingh152/CarRentalApp.git
-cd CarRentalApp
+## Architecture
+The application uses a shared business logic layer:
+```
+[JavaFX Desktop]       [Web Browser]
+       │                     │
+       ▼                     ▼
+[Controllers]         [REST Controllers]
+       │                     │
+       └─────────┬───────────┘
+                 ▼
+            [Services]
+                 ▼
+              [DAOs]
+                 ▼
+             [MySQL]
+```
 
-2. Open in VS Code / IntelliJ
+## Screenshots
 
-Open the folder in VS Code or IntelliJ IDEA.
+### Web UI Screenshots (Spring Boot Backend)
 
-Make sure JavaFX SDK is configured properly.
+#### Admin Login
+![Web Login](screenshots/web-login.png)
 
-3. Setup Database
+#### Live Dashboard
+![Web Dashboard](screenshots/web-dashboard.png)
 
-Open MySQL.
+#### Manage Car Inventory
+![Web Cars](screenshots/web-cars.png)
 
-Create a new database:
+#### Rent a Car
+![Web Rent](screenshots/web-rent.png)
 
-CREATE DATABASE carrental;
+#### Manage Customers & Returns
+![Web Customers & Returns](screenshots/web-customers.png)
 
+### Desktop UI Screenshots (JavaFX)
 
-Import the carrental.sql file (if provided).
+#### Desktop App Login
+![Desktop Login](screenshots/login%20page.png)
 
-4. Run the Project
+#### Desktop Dashboard Overview
+![Desktop Dashboard](screenshots/Dashboard%20overview.png)
 
-Open Main.java.
+#### Desktop Manage Cars
+![Desktop Manage Cars](screenshots/Manage%20Cars.png)
 
-Click Run.
+#### Desktop Rent a Car
+![Desktop Rent a Car](screenshots/Rent%20a%20Car.png)
 
-📸 Screenshots
-Login Page	Dashboard	Booking Form
+#### Desktop Customers & Returns
+![Desktop Customers & Returns](screenshots/Customers%20&%20Returns.png)
 
-	
-	
-📊 Future Enhancements
+## Run Locally (Dual Mode)
 
- Add PDF report generation
+### 1. Database Setup
+1. Create a MySQL database named `rentcar` (or configure a remote Aiven DB).
+2. Execute `src/main/resources/database/schema.sql`.
+   *Default Web/Desktop login: Username `admin` / Password `admin123`*
 
- Implement email notifications
+### 2. Environment Configuration
+Copy `.env.example` to `.env` and set your credentials:
+```env
+DB_URL=jdbc:mysql://localhost:3306/rentcar
+DB_USERNAME=root
+DB_PASSWORD=your_password_here
+PORT=8080
+```
 
- Add admin panel for advanced controls
+### 3. Run Web Mode (Spring Boot)
+Starts the embedded web server on port 8080 (or your configured `PORT`).
+```bash
+JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64 mvn spring-boot:run
+```
+Visit `http://localhost:8080` in your browser.
 
-🤝 Contributing
+### 4. Run Desktop Mode (JavaFX)
+Launches the standalone JavaFX UI.
+```bash
+JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64 mvn javafx:run
+```
 
-Contributions are welcome! Follow these steps:
+## Deployment (Render & Docker)
+The repository includes a multi-stage `Dockerfile` optimized for Render Web Services.
 
-git checkout -b feature-branch
-git commit -m "Added a new feature"
-git push origin feature-branch
+1. Create a new Web Service on Render.
+2. Connect this GitHub repository.
+3. Environment variables required in Render Dashboard:
+   - `DB_URL` (e.g., Aiven MySQL connection string: `jdbc:mysql://host:port/defaultdb?sslMode=REQUIRED`)
+   - `DB_USERNAME`
+   - `DB_PASSWORD`
+   *(Note: Render assigns `PORT` automatically, which Spring Boot detects).*
 
-
-Then create a Pull Request.
-
-🧑‍💻 Author
-SACHIN SINGH
-TARACHAND JAKHAR
-
-🔗 GitHub Profile
-https://github.com/sachinsingh152
-https://github.com/TARACHANDJAKHAR
-
-
-📜 License
-
-This project is licensed under the MIT License — feel free to use and modify it.
+## Limitations
+- This is a portfolio/demo-grade application. The web authentication uses basic local storage tokens rather than enterprise JWT/Spring Security.
+- The desktop charts are placeholders, while the web dashboard statistics are real-time.

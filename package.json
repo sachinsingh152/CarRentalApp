@@ -1,0 +1,23 @@
+{
+  "name": "carrentalapp",
+  "version": "1.0.0",
+  "description": "A dual-mode Car Rental Management System with a modern web dashboard and a classic JavaFX desktop client. Both modes share the same robust backend services, data access layer, and BCrypt security.",
+  "main": "screenshot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sachinsingh152/CarRentalApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sachinsingh152/CarRentalApp/issues"
+  },
+  "homepage": "https://github.com/sachinsingh152/CarRentalApp#readme",
+  "dependencies": {
+    "puppeteer": "^25.7.0"
+  }
+}
