@@ -15,13 +15,6 @@ Car Rental Management System built with JavaFX and MySQL. The application handle
 ![Rent a Car](screenshots/web-rent.png)
 ![Customers & Returns](screenshots/web-customers.png)
 
-### Desktop Interface (JavaFX)
-![Desktop Login](screenshots/login%20page.png)
-![Desktop Dashboard](screenshots/Dashboard%20overview.png)
-![Desktop Manage Cars](screenshots/Manage%20Cars.png)
-![Desktop Rent a Car](screenshots/Rent%20a%20Car.png)
-![Desktop Customers & Returns](screenshots/Customers%20&%20Returns.png)
-
 ## Features
 
 - Dual modes: Run as a standalone Desktop App or a cloud Web App.
